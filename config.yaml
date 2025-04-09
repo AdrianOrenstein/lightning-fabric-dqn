@@ -1,0 +1,32 @@
+common:
+  REGISTRY: "docker.io"
+  USERNAME: "adrianorenstein"
+  IMAGE_NAME: "pytorch"
+  TAG: "latest"
+  PLATFORMS: "linux/amd64"
+images:
+  pytorch:
+    IMAGE_NAME: "pytorch"
+    TAG: "latest"
+    PLATFORMS: "linux/amd64"
+    TAG_PYTORCH: True
+
+  cuda_pytorch:
+    IMAGE_NAME: "cuda_pytorch"
+    TAG: "latest"
+    PLATFORMS: "linux/amd64"
+  
+  atari:
+    IMAGE_NAME: "atari_pytorch"
+    TAG: "latest"
+    PLATFORMS: "linux/amd64"
+
+  cuda_atari:
+    IMAGE_NAME: "cuda_atari"
+    TAG: "latest"
+    PLATFORMS: "linux/amd64"
+
+  apptainer:
+    IMAGE_NAME: "apptainer"
+    TAG: "latest"
+    PLATFORMS: "linux/amd64"
