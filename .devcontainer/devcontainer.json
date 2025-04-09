@@ -1,10 +1,10 @@
 {
     "image": "adrianorenstein/fabric_dqn:latest",
     "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
+    "workspaceFolder": "/app",
     "mounts": [
         "source=${env:HOME}/.netrc,target=/home/user/.netrc,type=bind,consistency=cached"
     ],
-    "workspaceFolder": "/app",
     "runArgs": [
         "--ipc=host",
         "--gpus",

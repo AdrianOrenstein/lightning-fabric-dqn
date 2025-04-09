@@ -2,3 +2,5 @@
 *.sif
 *.pyc
 *.tar
+wandb/
+**__pycache__**
