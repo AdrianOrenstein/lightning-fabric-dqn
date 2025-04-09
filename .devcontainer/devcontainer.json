@@ -1,5 +1,5 @@
 {
-    "image": "adrianorenstein/pytorch:latest",
+    "image": "adrianorenstein/cuda_atari:latest",
     "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
     "mounts": [
         "source=${env:HOME}/.netrc,target=/home/user/.netrc,type=bind,consistency=cached"
