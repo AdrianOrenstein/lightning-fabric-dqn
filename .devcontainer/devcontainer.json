@@ -1,13 +1,14 @@
 {
-    "image": "adrianorenstein/cuda_atari:latest",
+    "image": "adrianorenstein/fabric_dqn:latest",
     "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
     "mounts": [
         "source=${env:HOME}/.netrc,target=/home/user/.netrc,type=bind,consistency=cached"
     ],
     "workspaceFolder": "/app",
     "runArgs": [
-        "--ipc=host"
-        // "--gpus", "all",
+        "--ipc=host",
+        "--gpus",
+        "all"
     ],
     "containerEnv": {
         "SHELL": "/bin/bash"

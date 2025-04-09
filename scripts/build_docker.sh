@@ -77,15 +77,12 @@ if [ "$(yq e ".images.$IMAGE_TYPE.TAG_PYTHON" config.yaml)" = "True" ]; then
 fi
 
 # check if new_tag was set, if not, exit
-echo "NEW_TAG: $NEW_TAG"
 if [ -z "$NEW_TAG" ]; then
-    echo "No new tag was set, exiting"
     exit 0
 fi
 
 NEW_TAG="${NEW_TAG}-devell"
 FULL_IMAGE_WITH_VERSIONS="$USERNAME/$IMAGE_NAME:$NEW_TAG"
-echo "Building image $FULL_IMAGE_WITH_VERSIONS"
 # build image for multiple platforms, push latest to docker.io
 docker buildx build -t $FULL_IMAGE_WITH_VERSIONS \
     --platform="$PLATFORMS" \

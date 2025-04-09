@@ -43,15 +43,16 @@ RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${PYTH
     curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
 
 RUN pip install \
-    torch torchvision torchrl tensordict einops \
+    torch torchvision torchrl tensordict \
+    ale-py opencv-python-headless lz4 \
+    stable-baselines3 \
+    tyro tqdm loguru \
     numpy opt_einsum numba \
     pandas matplotlib seaborn scikit-learn jupyterlab ipywidgets \
-    tyro tqdm loguru \
     ruff pre-commit \
-    flake8-black flake8 isort \
-    pytest pytest-benchmark pytest-parallel py coverage \
-    redis wandb moviepy imageio pysocks 'requests[socks]' \
-    lightning wandb lightning-bolts
+    pytest pytest-instafail pytest-benchmark "pytest-xdist[psutil]" py pytest-cov \
+    redis pygame protobuf moviepy imageio pysocks 'requests[socks]' \
+    lightning lightning-bolts wandb tensorboard
 
 RUN git config --global --add safe.directory /app
 
